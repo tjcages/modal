@@ -1,5 +1,5 @@
 {
-  "name": "vaul",
+  "name": "modal",
   "version": "0.9.3",
   "description": "Drawer component for React.",
   "main": "./dist/index.js",
@@ -40,10 +40,10 @@
   "homepage": "https://vaul.emilkowal.ski/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/emilkowalski/vaul.git"
+    "url": "https://github.com/tjcages/modal.git"
   },
   "bugs": {
-    "url": "https://github.com/emilkowalski/vaul/issues"
+    "url": "https://github.com/tjcages/modal/issues"
   },
   "devDependencies": {
     "@playwright/test": "^1.37.1",
