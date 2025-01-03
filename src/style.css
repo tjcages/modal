@@ -179,7 +179,8 @@
 @media (min-width: 1024px) {
   [data-vaul-drawer] {
     width: var(--desktop-width, 50%);
-    height: var(--desktop-height, 50%);
+    height: auto;
+    min-height: var(--desktop-height, 50%);
     max-width: 90vw;
     max-height: 90vh;
     border-radius: 8px;
@@ -191,6 +192,42 @@
     bottom: auto;
     transform: translate3d(-50%, -75%, 0);
   }
+
+  /* New rule for large drawers */
+  [data-vaul-drawer][data-vaul-drawer-large='true'] {
+    transform: translate3d(-50%, -50%, 0);
+  }
+}
+
+@media (min-width: 1024px) {
+  @keyframes slideFromBottom {
+    from {
+      transform: translate3d(-50%, 100%, 0);
+    }
+    to {
+      transform: translate3d(-50%, -75%, 0);
+    }
+  }
+
+  /* New animation for large drawers */
+  @keyframes slideFromBottomLarge {
+    from {
+      transform: translate3d(-50%, 100%, 0);
+    }
+    to {
+      transform: translate3d(-50%, -50%, 0);
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  @keyframes slideToBottom {
+    to {
+      transform: translate3d(-50%, 100%, 0);
+    }
+  }
+
+  /* The slideToBottom animation remains the same for both cases */
 }
 
 /* This will allow us to not animate via animation, but still benefit from delaying unmount via Radix. */

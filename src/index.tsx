@@ -61,6 +61,12 @@ export type DialogProps = {
   onAnimationEnd?: (open: boolean) => void;
 } & (WithFadeFromProps | WithoutFadeFromProps);
 
+export interface DrawerContextValue {
+  // ... (other properties)
+  overlayRef: React.RefObject<HTMLDivElement>;
+  // ... (other properties)
+}
+
 export function Root({
   open: openProp,
   onOpenChange,
@@ -275,6 +281,12 @@ export function Root({
         percentageDragged = snapPointPercentageDragged;
       }
 
+      // Automatically dismiss the drawer if dragged past 80%
+      if (percentageDragged > 0.8 && dismissible) {
+        closeDrawer();
+        return;
+      }
+
       // Disallow close dragging beyond the smallest snap point.
       if (noCloseSnapPointsPreCondition && percentageDragged >= 1) {
         return;
@@ -311,7 +323,7 @@ export function Root({
         return;
       }
 
-      const opacityValue = 1 - percentageDragged;
+      const opacityValue = Math.max(0.2, 1 - percentageDragged);
 
       if (shouldFade || (fadeFromIndex && activeSnapPointIndex === fadeFromIndex - 1)) {
         onDragProp?.(event, percentageDragged);
@@ -504,6 +516,9 @@ export function Root({
     const timeTaken = dragEndTime.current.getTime() - dragStartTime.current.getTime();
     const distMoved = pointerStart.current - (isVertical(direction) ? event.clientY : event.clientX);
     const velocity = Math.abs(distMoved) / timeTaken;
+
+    if (velocity === 0) return;
+    console.log(swipeAmount, velocity)
 
     if (velocity > 0.05) {
       // `justReleased` is needed to prevent the drawer from focusing on an input when the drag ends, as it's not the intent most of the time.
@@ -701,7 +716,7 @@ Overlay.displayName = 'Drawer.Overlay';
 export type ContentProps = React.ComponentPropsWithoutRef<typeof DialogPrimitive.Content>;
 
 export const Content = React.forwardRef<HTMLDivElement, ContentProps>(function (
-  { onPointerDownOutside, style, ...rest },
+  { onPointerDownOutside, style, onClick, ...rest },
   ref,
 ) {
   const {
@@ -717,6 +732,9 @@ export const Content = React.forwardRef<HTMLDivElement, ContentProps>(function (
     snapPoints,
     container,
     handleOnly,
+    dismissible,
+    closeDrawer,
+    overlayRef,
   } = useDrawerContext();
   // Needed to use transition instead of animations
   const [delayedSnapPoints, setDelayedSnapPoints] = React.useState(false);
@@ -750,6 +768,11 @@ export const Content = React.forwardRef<HTMLDivElement, ContentProps>(function (
     return true;
   };
 
+  const isInteractiveElement = (element: HTMLElement): boolean => {
+    const interactiveElements = ['INPUT', 'TEXTAREA', 'SELECT', 'BUTTON', 'A'];
+    return interactiveElements.includes(element.tagName) || element.getAttribute('role') === 'button';
+  };
+
   React.useEffect(() => {
     if (hasSnapPoints) {
       window.requestAnimationFrame(() => {
@@ -778,26 +801,34 @@ export const Content = React.forwardRef<HTMLDivElement, ContentProps>(function (
       onPointerDown={(event) => {
         if (handleOnly) return;
         rest.onPointerDown?.(event);
-        pointerStartRef.current = { x: event.clientX, y: event.clientY };
-        onPress(event);
+        const target = event.target as HTMLElement;
+        if (!isInteractiveElement(target)) {
+          pointerStartRef.current = { x: event.clientX, y: event.clientY };
+          onPress(event);
+        }
       }}
       onPointerDownOutside={(e) => {
-        onPointerDownOutside?.(e);
-
-        if (!modal || e.defaultPrevented) {
+        if (!modal || e.defaultPrevented || !dismissible) {
           e.preventDefault();
           return;
+        }
+
+        // Check if the click is on the overlay
+        if (overlayRef.current && overlayRef.current.contains(e.target as Node)) {
+          onPointerDownOutside?.(e);
+          closeDrawer();
+        } else {
+          e.preventDefault();
         }
 
         if (keyboardIsOpen.current) {
           keyboardIsOpen.current = false;
         }
       }}
-      onFocusOutside={(e) => {
-        if (!modal) {
-          e.preventDefault();
-          return;
-        }
+      onClick={(e) => {
+        // Prevent dismissal when clicking inside the drawer
+        e.stopPropagation();
+        onClick?.(e);
       }}
       onPointerMove={(event) => {
         if (handleOnly) return;

@@ -77,7 +77,7 @@ const useDrawerContext = ()=>{
     return context;
 };
 
-__insertCSS("[data-vaul-drawer]{touch-action:none;will-change:transform;transition:transform .5s cubic-bezier(.32, .72, 0, 1);animation-duration:.5s;animation-timing-function:cubic-bezier(0.32,0.72,0,1)}[data-vaul-drawer][data-vaul-snap-points=false][data-vaul-drawer-direction=bottom][data-state=open]{animation-name:slideFromBottom}[data-vaul-drawer][data-vaul-snap-points=false][data-vaul-drawer-direction=bottom][data-state=closed]{animation-name:slideToBottom}[data-vaul-drawer][data-vaul-snap-points=false][data-vaul-drawer-direction=top][data-state=open]{animation-name:slideFromTop}[data-vaul-drawer][data-vaul-snap-points=false][data-vaul-drawer-direction=top][data-state=closed]{animation-name:slideToTop}[data-vaul-drawer][data-vaul-snap-points=false][data-vaul-drawer-direction=left][data-state=open]{animation-name:slideFromLeft}[data-vaul-drawer][data-vaul-snap-points=false][data-vaul-drawer-direction=left][data-state=closed]{animation-name:slideToLeft}[data-vaul-drawer][data-vaul-snap-points=false][data-vaul-drawer-direction=right][data-state=open]{animation-name:slideFromRight}[data-vaul-drawer][data-vaul-snap-points=false][data-vaul-drawer-direction=right][data-state=closed]{animation-name:slideToRight}[data-vaul-drawer][data-vaul-snap-points=true][data-vaul-drawer-direction=bottom]{transform:translate3d(0,100%,0)}[data-vaul-drawer][data-vaul-snap-points=true][data-vaul-drawer-direction=top]{transform:translate3d(0,-100%,0)}[data-vaul-drawer][data-vaul-snap-points=true][data-vaul-drawer-direction=left]{transform:translate3d(-100%,0,0)}[data-vaul-drawer][data-vaul-snap-points=true][data-vaul-drawer-direction=right]{transform:translate3d(100%,0,0)}[data-vaul-drawer][data-vaul-delayed-snap-points=true][data-vaul-drawer-direction=top]{transform:translate3d(0,var(--snap-point-height,0),0)}[data-vaul-drawer][data-vaul-delayed-snap-points=true][data-vaul-drawer-direction=bottom]{transform:translate3d(0,var(--snap-point-height,0),0)}[data-vaul-drawer][data-vaul-delayed-snap-points=true][data-vaul-drawer-direction=left]{transform:translate3d(var(--snap-point-height,0),0,0)}[data-vaul-drawer][data-vaul-delayed-snap-points=true][data-vaul-drawer-direction=right]{transform:translate3d(var(--snap-point-height,0),0,0)}[data-vaul-overlay][data-vaul-snap-points=false]{animation-duration:.5s;animation-timing-function:cubic-bezier(0.32,0.72,0,1)}[data-vaul-overlay][data-vaul-snap-points=false][data-state=open]{animation-name:fadeIn}[data-vaul-overlay][data-state=closed]{animation-name:fadeOut}[data-vaul-overlay][data-vaul-snap-points=true]{opacity:0;transition:opacity .5s cubic-bezier(.32, .72, 0, 1)}[data-vaul-overlay][data-vaul-snap-points=true]{opacity:1}[data-vaul-drawer]:not([data-vaul-custom-container=true])::after{content:'';position:absolute;background:inherit;background-color:inherit}[data-vaul-drawer][data-vaul-drawer-direction=top]::after{top:initial;bottom:100%;left:0;right:0;height:200%}[data-vaul-drawer][data-vaul-drawer-direction=bottom]::after{top:100%;bottom:initial;left:0;right:0;height:200%}[data-vaul-drawer][data-vaul-drawer-direction=left]::after{left:initial;right:100%;top:0;bottom:0;width:200%}[data-vaul-drawer][data-vaul-drawer-direction=right]::after{left:100%;right:initial;top:0;bottom:0;width:200%}[data-vaul-overlay][data-vaul-snap-points=true]:not([data-vaul-snap-points-overlay=true]):not(\n[data-state=closed]\n){opacity:0}[data-vaul-overlay][data-vaul-snap-points-overlay=true]{opacity:1}[data-vaul-handle]{display:block;position:relative;opacity:.7;background:#e2e2e4;margin-left:auto;margin-right:auto;height:5px;width:32px;border-radius:1rem;touch-action:pan-y}[data-vaul-handle]:active,[data-vaul-handle]:hover{opacity:1}[data-vaul-handle-hitarea]{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:max(100%,2.75rem);height:max(100%,2.75rem);touch-action:inherit}@media (hover:hover) and (pointer:fine){[data-vaul-drawer]{user-select:none}}@media (pointer:fine){[data-vaul-handle-hitarea]{width:100%;height:100%}}@media (min-width:1024px){[data-vaul-drawer]{width:var(--desktop-width,50%);height:var(--desktop-height,50%);max-width:90vw;max-height:90vh;border-radius:8px;overflow:hidden;position:fixed;top:50%;left:50%;right:auto;bottom:auto;transform:translate3d(-50%,-75%,0)}}@keyframes fadeIn{from{opacity:0}to{opacity:1}}@keyframes fadeOut{to{opacity:0}}@keyframes slideFromBottom{from{transform:translate3d(0,100%,0)}to{transform:translate3d(0,0,0)}}@media (min-width:1024px){@keyframes slideFromBottom{from{transform:translate3d(-50%,100%,0)}to{transform:translate3d(-50%,-75%,0)}}}@keyframes slideToBottom{to{transform:translate3d(0,100%,0)}}@media (min-width:1024px){@keyframes slideToBottom{to{transform:translate3d(-50%,100%,0)}}}@keyframes slideFromTop{from{transform:translate3d(0,-100%,0)}to{transform:translate3d(0,0,0)}}@keyframes slideToTop{to{transform:translate3d(0,-100%,0)}}@keyframes slideFromLeft{from{transform:translate3d(-100%,0,0)}to{transform:translate3d(0,0,0)}}@keyframes slideToLeft{to{transform:translate3d(-100%,0,0)}}@keyframes slideFromRight{from{transform:translate3d(100%,0,0)}to{transform:translate3d(0,0,0)}}@keyframes slideToRight{to{transform:translate3d(100%,0,0)}}");
+__insertCSS("[data-vaul-drawer]{touch-action:none;will-change:transform;transition:transform .5s cubic-bezier(.32, .72, 0, 1);animation-duration:.5s;animation-timing-function:cubic-bezier(0.32,0.72,0,1)}[data-vaul-drawer][data-vaul-snap-points=false][data-vaul-drawer-direction=bottom][data-state=open]{animation-name:slideFromBottom}[data-vaul-drawer][data-vaul-snap-points=false][data-vaul-drawer-direction=bottom][data-state=closed]{animation-name:slideToBottom}[data-vaul-drawer][data-vaul-snap-points=false][data-vaul-drawer-direction=top][data-state=open]{animation-name:slideFromTop}[data-vaul-drawer][data-vaul-snap-points=false][data-vaul-drawer-direction=top][data-state=closed]{animation-name:slideToTop}[data-vaul-drawer][data-vaul-snap-points=false][data-vaul-drawer-direction=left][data-state=open]{animation-name:slideFromLeft}[data-vaul-drawer][data-vaul-snap-points=false][data-vaul-drawer-direction=left][data-state=closed]{animation-name:slideToLeft}[data-vaul-drawer][data-vaul-snap-points=false][data-vaul-drawer-direction=right][data-state=open]{animation-name:slideFromRight}[data-vaul-drawer][data-vaul-snap-points=false][data-vaul-drawer-direction=right][data-state=closed]{animation-name:slideToRight}[data-vaul-drawer][data-vaul-snap-points=true][data-vaul-drawer-direction=bottom]{transform:translate3d(0,100%,0)}[data-vaul-drawer][data-vaul-snap-points=true][data-vaul-drawer-direction=top]{transform:translate3d(0,-100%,0)}[data-vaul-drawer][data-vaul-snap-points=true][data-vaul-drawer-direction=left]{transform:translate3d(-100%,0,0)}[data-vaul-drawer][data-vaul-snap-points=true][data-vaul-drawer-direction=right]{transform:translate3d(100%,0,0)}[data-vaul-drawer][data-vaul-delayed-snap-points=true][data-vaul-drawer-direction=top]{transform:translate3d(0,var(--snap-point-height,0),0)}[data-vaul-drawer][data-vaul-delayed-snap-points=true][data-vaul-drawer-direction=bottom]{transform:translate3d(0,var(--snap-point-height,0),0)}[data-vaul-drawer][data-vaul-delayed-snap-points=true][data-vaul-drawer-direction=left]{transform:translate3d(var(--snap-point-height,0),0,0)}[data-vaul-drawer][data-vaul-delayed-snap-points=true][data-vaul-drawer-direction=right]{transform:translate3d(var(--snap-point-height,0),0,0)}[data-vaul-overlay][data-vaul-snap-points=false]{animation-duration:.5s;animation-timing-function:cubic-bezier(0.32,0.72,0,1)}[data-vaul-overlay][data-vaul-snap-points=false][data-state=open]{animation-name:fadeIn}[data-vaul-overlay][data-state=closed]{animation-name:fadeOut}[data-vaul-overlay][data-vaul-snap-points=true]{opacity:0;transition:opacity .5s cubic-bezier(.32, .72, 0, 1)}[data-vaul-overlay][data-vaul-snap-points=true]{opacity:1}[data-vaul-drawer]:not([data-vaul-custom-container=true])::after{content:'';position:absolute;background:inherit;background-color:inherit}[data-vaul-drawer][data-vaul-drawer-direction=top]::after{top:initial;bottom:100%;left:0;right:0;height:200%}[data-vaul-drawer][data-vaul-drawer-direction=bottom]::after{top:100%;bottom:initial;left:0;right:0;height:200%}[data-vaul-drawer][data-vaul-drawer-direction=left]::after{left:initial;right:100%;top:0;bottom:0;width:200%}[data-vaul-drawer][data-vaul-drawer-direction=right]::after{left:100%;right:initial;top:0;bottom:0;width:200%}[data-vaul-overlay][data-vaul-snap-points=true]:not([data-vaul-snap-points-overlay=true]):not(\n[data-state=closed]\n){opacity:0}[data-vaul-overlay][data-vaul-snap-points-overlay=true]{opacity:1}[data-vaul-handle]{display:block;position:relative;opacity:.7;background:#e2e2e4;margin-left:auto;margin-right:auto;height:5px;width:32px;border-radius:1rem;touch-action:pan-y}[data-vaul-handle]:active,[data-vaul-handle]:hover{opacity:1}[data-vaul-handle-hitarea]{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:max(100%,2.75rem);height:max(100%,2.75rem);touch-action:inherit}@media (hover:hover) and (pointer:fine){[data-vaul-drawer]{user-select:none}}@media (pointer:fine){[data-vaul-handle-hitarea]{width:100%;height:100%}}@media (min-width:1024px){[data-vaul-drawer]{width:var(--desktop-width,50%);height:auto;min-height:var(--desktop-height,50%);max-width:90vw;max-height:90vh;border-radius:8px;overflow:hidden;position:fixed;top:50%;left:50%;right:auto;bottom:auto;transform:translate3d(-50%,-75%,0)}[data-vaul-drawer][data-vaul-drawer-large=true]{transform:translate3d(-50%,-50%,0)}}@media (min-width:1024px){@keyframes slideFromBottom{from{transform:translate3d(-50%,100%,0)}to{transform:translate3d(-50%,-75%,0)}}@keyframes slideFromBottomLarge{from{transform:translate3d(-50%,100%,0)}to{transform:translate3d(-50%,-50%,0)}}}@media (min-width:1024px){@keyframes slideToBottom{to{transform:translate3d(-50%,100%,0)}}}@keyframes fadeIn{from{opacity:0}to{opacity:1}}@keyframes fadeOut{to{opacity:0}}@keyframes slideFromBottom{from{transform:translate3d(0,100%,0)}to{transform:translate3d(0,0,0)}}@media (min-width:1024px){@keyframes slideFromBottom{from{transform:translate3d(-50%,100%,0)}to{transform:translate3d(-50%,-75%,0)}}}@keyframes slideToBottom{to{transform:translate3d(0,100%,0)}}@media (min-width:1024px){@keyframes slideToBottom{to{transform:translate3d(-50%,100%,0)}}}@keyframes slideFromTop{from{transform:translate3d(0,-100%,0)}to{transform:translate3d(0,0,0)}}@keyframes slideToTop{to{transform:translate3d(0,-100%,0)}}@keyframes slideFromLeft{from{transform:translate3d(-100%,0,0)}to{transform:translate3d(0,0,0)}}@keyframes slideToLeft{to{transform:translate3d(-100%,0,0)}}@keyframes slideFromRight{from{transform:translate3d(100%,0,0)}to{transform:translate3d(0,0,0)}}@keyframes slideToRight{to{transform:translate3d(100%,0,0)}}");
 
 const TRANSITIONS = {
     DURATION: 0.5,
@@ -938,6 +938,11 @@ function Root({ open: openProp, onOpenChange, children, onDrag: onDragProp, onRe
             if (snapPointPercentageDragged !== null) {
                 percentageDragged = snapPointPercentageDragged;
             }
+            // Automatically dismiss the drawer if dragged past 80%
+            if (percentageDragged > 0.8 && dismissible) {
+                closeDrawer();
+                return;
+            }
             // Disallow close dragging beyond the smallest snap point.
             if (noCloseSnapPointsPreCondition && percentageDragged >= 1) {
                 return;
@@ -966,7 +971,7 @@ function Root({ open: openProp, onOpenChange, children, onDrag: onDragProp, onRe
                 });
                 return;
             }
-            const opacityValue = 1 - percentageDragged;
+            const opacityValue = Math.max(0.2, 1 - percentageDragged);
             if (shouldFade || fadeFromIndex && activeSnapPointIndex === fadeFromIndex - 1) {
                 onDragProp == null ? void 0 : onDragProp(event, percentageDragged);
                 set(overlayRef.current, {
@@ -1113,6 +1118,8 @@ function Root({ open: openProp, onOpenChange, children, onDrag: onDragProp, onRe
         const timeTaken = dragEndTime.current.getTime() - dragStartTime.current.getTime();
         const distMoved = pointerStart.current - (isVertical(direction) ? event.clientY : event.clientX);
         const velocity = Math.abs(distMoved) / timeTaken;
+        if (velocity === 0) return;
+        console.log(swipeAmount, velocity);
         if (velocity > 0.05) {
             // `justReleased` is needed to prevent the drawer from focusing on an input when the drag ends, as it's not the intent most of the time.
             setJustReleased(true);
@@ -1271,8 +1278,8 @@ const Overlay = /*#__PURE__*/ React__namespace.default.forwardRef(function({ ...
     });
 });
 Overlay.displayName = 'Drawer.Overlay';
-const Content = /*#__PURE__*/ React__namespace.default.forwardRef(function({ onPointerDownOutside, style, ...rest }, ref) {
-    const { drawerRef, onPress, onRelease, onDrag, keyboardIsOpen, snapPointsOffset, modal, isOpen, direction, snapPoints, container, handleOnly } = useDrawerContext();
+const Content = /*#__PURE__*/ React__namespace.default.forwardRef(function({ onPointerDownOutside, style, onClick, ...rest }, ref) {
+    const { drawerRef, onPress, onRelease, onDrag, keyboardIsOpen, snapPointsOffset, modal, isOpen, direction, snapPoints, container, handleOnly, dismissible, closeDrawer, overlayRef } = useDrawerContext();
     // Needed to use transition instead of animations
     const [delayedSnapPoints, setDelayedSnapPoints] = React__namespace.default.useState(false);
     const composedRef = useComposedRefs(ref, drawerRef);
@@ -1303,6 +1310,16 @@ const Content = /*#__PURE__*/ React__namespace.default.forwardRef(function({ onP
         wasBeyondThePointRef.current = true;
         return true;
     };
+    const isInteractiveElement = (element)=>{
+        const interactiveElements = [
+            'INPUT',
+            'TEXTAREA',
+            'SELECT',
+            'BUTTON',
+            'A'
+        ];
+        return interactiveElements.includes(element.tagName) || element.getAttribute('role') === 'button';
+    };
     React__namespace.default.useEffect(()=>{
         if (hasSnapPoints) {
             window.requestAnimationFrame(()=>{
@@ -1325,27 +1342,35 @@ const Content = /*#__PURE__*/ React__namespace.default.forwardRef(function({ onP
         onPointerDown: (event)=>{
             if (handleOnly) return;
             rest.onPointerDown == null ? void 0 : rest.onPointerDown.call(rest, event);
-            pointerStartRef.current = {
-                x: event.clientX,
-                y: event.clientY
-            };
-            onPress(event);
+            const target = event.target;
+            if (!isInteractiveElement(target)) {
+                pointerStartRef.current = {
+                    x: event.clientX,
+                    y: event.clientY
+                };
+                onPress(event);
+            }
         },
         onPointerDownOutside: (e)=>{
-            onPointerDownOutside == null ? void 0 : onPointerDownOutside(e);
-            if (!modal || e.defaultPrevented) {
+            if (!modal || e.defaultPrevented || !dismissible) {
                 e.preventDefault();
                 return;
+            }
+            // Check if the click is on the overlay
+            if (overlayRef.current && overlayRef.current.contains(e.target)) {
+                onPointerDownOutside == null ? void 0 : onPointerDownOutside(e);
+                closeDrawer();
+            } else {
+                e.preventDefault();
             }
             if (keyboardIsOpen.current) {
                 keyboardIsOpen.current = false;
             }
         },
-        onFocusOutside: (e)=>{
-            if (!modal) {
-                e.preventDefault();
-                return;
-            }
+        onClick: (e)=>{
+            // Prevent dismissal when clicking inside the drawer
+            e.stopPropagation();
+            onClick == null ? void 0 : onClick(e);
         },
         onPointerMove: (event)=>{
             if (handleOnly) return;

@@ -36,6 +36,9 @@ type DialogProps = {
     container?: HTMLElement | null;
     onAnimationEnd?: (open: boolean) => void;
 } & (WithFadeFromProps | WithoutFadeFromProps);
+interface DrawerContextValue {
+    overlayRef: React.RefObject<HTMLDivElement>;
+}
 declare function Root({ open: openProp, onOpenChange, children, onDrag: onDragProp, onRelease: onReleaseProp, snapPoints, shouldScaleBackground, setBackgroundColorOnScale, closeThreshold, scrollLockTimeout, dismissible, handleOnly, fadeFromIndex, activeSnapPoint: activeSnapPointProp, setActiveSnapPoint: setActiveSnapPointProp, fixed, modal, onClose, noBodyStyles, direction, defaultOpen, disablePreventScroll, snapToSequentialPoint, repositionInputs, onAnimationEnd, container, }: DialogProps): React.JSX.Element;
 declare const Overlay: React.ForwardRefExoticComponent<Omit<DialogPrimitive.DialogOverlayProps & React.RefAttributes<HTMLDivElement>, "ref"> & React.RefAttributes<HTMLDivElement>>;
 type ContentProps = React.ComponentPropsWithoutRef<typeof DialogPrimitive.Content>;
@@ -64,4 +67,4 @@ declare const Drawer: {
     Description: React.ForwardRefExoticComponent<DialogPrimitive.DialogDescriptionProps & React.RefAttributes<HTMLParagraphElement>>;
 };
 
-export { Content, type ContentProps, type DialogProps, Drawer, Handle, type HandleProps, NestedRoot, Overlay, Portal, Root, type WithFadeFromProps, type WithoutFadeFromProps };
+export { Content, type ContentProps, type DialogProps, Drawer, type DrawerContextValue, Handle, type HandleProps, NestedRoot, Overlay, Portal, Root, type WithFadeFromProps, type WithoutFadeFromProps };

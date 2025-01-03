@@ -28,47 +28,194 @@ export function Hero() {
             <Drawer.Portal>
               <Drawer.Overlay className="fixed inset-0 bg-[#060E0C]/60" />
               <Drawer.Content className="bg-gray-100 flex flex-col rounded-t-[10px] h-full mt-24 max-h-[96%] fixed bottom-0 left-0 right-0 outline-none">
-                <div className="p-4 bg-white rounded-t-[10px] flex-1">
+                <div className="p-4 bg-white rounded-t-[10px] flex-1 max-h-[80vh] overflow-y-scroll">
                   <div className="mx-auto w-12 h-1.5 flex-shrink-0 rounded-full bg-gray-300 mb-8" />
                   <div className="max-w-md mx-auto">
-                    <Drawer.Title className="font-medium mb-4">Drawer for React.</Drawer.Title>
-                    <p className="text-gray-600 mb-2">
-                      This component can be used as a Dialog replacement on mobile and tablet devices. You can read
-                      about why and how it was built{' '}
-                      <a
-                        target="_blank"
-                        className="underline"
-                        href="https://emilkowal.ski/ui/building-a-drawer-component"
+                    <Drawer.Title className="font-medium mb-4">Submit Your Information</Drawer.Title>
+                    <form onSubmit={(e) => e.preventDefault()} className="space-y-4">
+                      <div>
+                        <label htmlFor="name" className="block text-sm font-medium text-gray-700">
+                          Name
+                        </label>
+                        <input
+                          type="text"
+                          id="name"
+                          name="name"
+                          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                        />
+                      </div>
+                      <div>
+                        <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+                          Email
+                        </label>
+                        <input
+                          type="email"
+                          id="email"
+                          name="email"
+                          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                        />
+                      </div>
+                      <div>
+                        <label htmlFor="dob" className="block text-sm font-medium text-gray-700">
+                          Date of Birth
+                        </label>
+                        <input
+                          type="date"
+                          id="dob"
+                          name="dob"
+                          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                        />
+                      </div>
+                      <div>
+                        <label htmlFor="company" className="block text-sm font-medium text-gray-700">
+                          Company Name
+                        </label>
+                        <input
+                          type="text"
+                          id="company"
+                          name="company"
+                          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                        />
+                      </div>
+                      <div>
+                        <label htmlFor="name" className="block text-sm font-medium text-gray-700">
+                          Name
+                        </label>
+                        <input
+                          type="text"
+                          id="name"
+                          name="name"
+                          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                        />
+                      </div>
+                      <div>
+                        <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+                          Email
+                        </label>
+                        <input
+                          type="email"
+                          id="email"
+                          name="email"
+                          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                        />
+                      </div>
+                      <div>
+                        <label htmlFor="dob" className="block text-sm font-medium text-gray-700">
+                          Date of Birth
+                        </label>
+                        <input
+                          type="date"
+                          id="dob"
+                          name="dob"
+                          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                        />
+                      </div>
+                      <div>
+                        <label htmlFor="company" className="block text-sm font-medium text-gray-700">
+                          Company Name
+                        </label>
+                        <input
+                          type="text"
+                          id="company"
+                          name="company"
+                          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                        />
+                      </div>
+                      <div>
+                        <label htmlFor="name" className="block text-sm font-medium text-gray-700">
+                          Name
+                        </label>
+                        <input
+                          type="text"
+                          id="name"
+                          name="name"
+                          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                        />
+                      </div>
+                      <div>
+                        <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+                          Email
+                        </label>
+                        <input
+                          type="email"
+                          id="email"
+                          name="email"
+                          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                        />
+                      </div>
+                      <div>
+                        <label htmlFor="dob" className="block text-sm font-medium text-gray-700">
+                          Date of Birth
+                        </label>
+                        <input
+                          type="date"
+                          id="dob"
+                          name="dob"
+                          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                        />
+                      </div>
+                      <div>
+                        <label htmlFor="company" className="block text-sm font-medium text-gray-700">
+                          Company Name
+                        </label>
+                        <input
+                          type="text"
+                          id="company"
+                          name="company"
+                          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                        />
+                      </div>
+                      <div>
+                        <label htmlFor="name" className="block text-sm font-medium text-gray-700">
+                          Name
+                        </label>
+                        <input
+                          type="text"
+                          id="name"
+                          name="name"
+                          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                        />
+                      </div>
+                      <div>
+                        <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+                          Email
+                        </label>
+                        <input
+                          type="email"
+                          id="email"
+                          name="email"
+                          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                        />
+                      </div>
+                      <div>
+                        <label htmlFor="dob" className="block text-sm font-medium text-gray-700">
+                          Date of Birth
+                        </label>
+                        <input
+                          type="date"
+                          id="dob"
+                          name="dob"
+                          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                        />
+                      </div>
+                      <div>
+                        <label htmlFor="company" className="block text-sm font-medium text-gray-700">
+                          Company Name
+                        </label>
+                        <input
+                          type="text"
+                          id="company"
+                          name="company"
+                          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                        />
+                      </div>
+                      <button
+                        type="submit"
+                        className="w-full py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                       >
-                        here
-                      </a>
-                      .
-                    </p>
-                    <p className="text-gray-600 mb-2">
-                      It comes unstyled, has gesture-driven animations, and is made by{' '}
-                      <a href="https://emilkowal.ski/" className="underline" target="_blank">
-                        Emil Kowalski
-                      </a>
-                      .
-                    </p>
-                    <p className="text-gray-600 mb-8">
-                      It uses{' '}
-                      <a
-                        href="https://www.radix-ui.com/docs/primitives/components/dialog"
-                        className="underline"
-                        target="_blank"
-                      >
-                        Radix's Dialog primitive
-                      </a>{' '}
-                      under the hood and is inspired by{' '}
-                      <a
-                        href="https://twitter.com/devongovett/status/1674470185783402496"
-                        className="underline"
-                        target="_blank"
-                      >
-                        this tweet.
-                      </a>
-                    </p>
+                        Submit
+                      </button>
+                    </form>
                   </div>
                 </div>
                 <div className="p-4 bg-gray-100 border-t border-gray-200 mt-auto">
